@@ -6,8 +6,8 @@ export default function Alert({ preview }) {
   return (
     <div
       className={cn('border-b', {
-        'bg-accent-7 border-accent-7 text-white': preview,
-        'bg-accent-1 border-accent-2': !preview,
+        'bg-gray-light text-gray': preview,
+        'bg-gray text-white': !preview,
       })}
     >
       <Container>
@@ -25,12 +25,12 @@ export default function Alert({ preview }) {
             </>
           ) : (
             <>
-              The source code for this blog is{' '}
+              Le code source est disponible {' '}
               <a
-                href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-                className="underline hover:text-success duration-200 transition-colors"
+                href={`https://github.com/fabhup/`}
+                className="underline hover:text-gray-light duration-200 transition-colors"
               >
-                available on GitHub
+                sur mon GitHub
               </a>
               .
             </>
