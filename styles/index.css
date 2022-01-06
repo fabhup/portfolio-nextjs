@@ -1,46 +1,45 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "react-image-gallery/styles/css/image-gallery.css";
+@import 'react-image-gallery/styles/css/image-gallery.css';
 
 /* --text-hover: hsl(from var(--text) h s calc(l - 20%)); */
 
 @function derive-rgb-values-from-hex($hex) {
     @return red($hex), green($hex), blue($hex);
-  }
+}
 
 :root {
     --bluegrey: #78909c;
     --bluegrey-dark: #37474f;
-    --bluegrey-darkest: #263238; 
+    --bluegrey-darkest: #263238;
     --bluegrey-light: #cfd8dc;
     --bluegrey-lightest: #f5f5f5;
 
     --blue: #42a5f5;
     --blue-dark: #1565c0;
-    --blue-darkest: #1a237e; 
+    --blue-darkest: #1a237e;
     --blue-light: #bbdefb;
     --blue-lightest: #e3f2fd;
 
     --cyan: #00bcd4;
     --cyan-dark: #0097a7;
-    --cyan-darkest: #006064; 
+    --cyan-darkest: #006064;
     --cyan-light: #80deea;
     --cyan-lightest: #e0f7fa;
 
     --deeppurple: #673ab7;
     --deeppurple-dark: #512da8;
-    --deeppurple-darkest: #311b92; 
+    --deeppurple-darkest: #311b92;
     --deeppurple-light: #b39ddb;
     --deeppurple-lightest: #ede7f6;
 
     --purple: #8e24aa;
     --purple-dark: #6a1b9a;
-    --purple-darkest: #4a148c; 
+    --purple-darkest: #4a148c;
     --purple-light: #e1bee7;
     --purple-lightest: #f3e5f5;
-  }
+}
 
 .light-theme {
     --primary: var(--bluegrey);
@@ -48,10 +47,12 @@
     --primary-lightest: var(--bluegrey-lightest);
     --primary-dark: var(--bluegrey-dark);
     --primary-darkest: var(--bluegrey-darkest);
-    --button-bg: var(--bluegrey-dark);
-    --button-bg-hover: var(--bluegrey-darkest);
+    --button-bg: var(--blue-dark);
+    --button-bg-hover: var(--blue);
+    --button-text: #fff;
+    --button-text-hover: #fff;
     --background: #fff;
-    --background-light: var(--bluegrey-dark);
+    --background-light: #fff;
     --background-hover: var(--primary-light);
     --header-bg: var(--primary-lightest);
     --header-text: var(--primary-dark);
@@ -70,7 +71,7 @@
     --text-2: var(--primary-dark);
     --border-1: var(--background);
     --border-2: var(--primary-dark);
-  }
+}
 
 .dark-theme {
     --primary: var(--bluegrey);
@@ -78,12 +79,13 @@
     --primary-lightest: var(--bluegrey-lightest);
     --primary-dark: var(--bluegrey-dark);
     --primary-darkest: var(--bluegrey-darkest);
-
-    --button-bg: var(--bluegrey-light);
-    --button-bg-hover: var(--bluegrey-lightest);
+    --button-bg: var(--blue);
+    --button-bg-hover: var(--blue-dark);
+    --button-text: #fff;
+    --button-text-hover: #fff;
     --background: var(--primary-darkest);
     --background-hover: var(--primary-dark);
-    --background-light: var(--primary-light);
+    --background-light: var(--primary-dark);
     --background-dark: var(--primary-darkest);
     --header-bg: var(--primary-darkest);
     --header-text: #fff;
@@ -101,7 +103,7 @@
     --text-2: #fff;
     --border-1: var(--background);
     --border-2: var(--primary-light);
-  }
+}
 
 .funky {
     --primary: var(--purple);
@@ -114,50 +116,66 @@
     --secondary-lightest: var(--blue-lightest);
     --secondary-dark: var(--blue-dark);
     --secondary-darkest: var(--blue-darkest);
-
     --button-bg: var(--blue-dark);
-    --button-bg-hover: var(--blue-darkest);
+    --button-bg-hover: var(--blue);
+    --button-text: #fff;
+    --button-text-hover: #fff;
     --background: #fff;
     --background-hover: var(--primary-light);
-    --background-light: var(--secondary-dark);
+    --background-light: #fff;
     --background-dark: var(--primary-darkest);
     --header-bg: var(--primary-darkest);
-    --header-text:  #fff;
+    --header-text: #fff;
     --header-text-hover: var(--primary-lightest);
     --footer-bg: var(--bluegrey-darkest);
-    --footer-text:var(--secondary-lightest);
+    --footer-text: var(--secondary-lightest);
     --footer-text-hover: var(--secondary-light);
     --headings: var(--primary-dark);
     --text: var(--secondary-darkest);
     --text-hover: var(--primary-light);
-    --background-1:  var(--bluegrey-lightest);
+    --background-1: var(--bluegrey-lightest);
     --background-2: var(--primary-light);
     --text-1: var(--primary-dark);
     --text-2: var(--primary-dark);
     --border-1: var(--secondary-lightest);
     --border-2: 'transparent';
+}
 
-  }
-
-.grayscale {filter: grayscale(1);}
-.font-thin { font-weight: 200; }
-.font-light { font-weight: 300; }
-.font-normal { font-weight: 400; }
-.font-medium { font-weight: 500; }
-.font-semibold { font-weight: 600; }
-.font-bold { font-weight: 700; }
+.grayscale {
+    filter: grayscale(1);
+}
+.font-thin {
+    font-weight: 200;
+}
+.font-light {
+    font-weight: 300;
+}
+.font-normal {
+    font-weight: 400;
+}
+.font-medium {
+    font-weight: 500;
+}
+.font-semibold {
+    font-weight: 600;
+}
+.font-bold {
+    font-weight: 700;
+}
 
 .image-gallery-description {
-    color:var(--primary-light) !important;
+    color: var(--primary-light) !important;
     width: 100% !important;
     background: var(--primary-dark) !important;
     position: absolute !important;
     bottom: 0 !important;
-    line-height: 2rem !important;
-    vertical-align: top !important;
+    height: 5.5rem !important;
+    line-height: 1rem !important;
+    vertical-align: middle !important;
     padding-bottom: 2.5rem !important;
+    padding-top: 1rem !important;
     opacity: 0.85 !important;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .image-gallery-slide {
@@ -166,7 +184,7 @@
 
 .image-gallery-image {
     object-fit: cover !important;
-    object-position:left top !important;
+    object-position: left top !important;
     height: 100% !important;
 }
 
@@ -180,4 +198,8 @@
 
 .image-gallery-icon:hover {
     color: var(--primary) !important;
+}
+
+.list-style-checkmark {
+    list-style-type: '\2705' !important;
 }

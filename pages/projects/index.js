@@ -4,7 +4,7 @@ import Container from '@/components/container'
 import Intro from '@/components/intro'
 import Layout from '@/components/layout'
 import Gallery from '@/components/gallery'
-import LastProjects from '@/components/last-projects'
+import ProjectsCards from '@/components/projects-cards'
 import {
     getAllPostsForHome,
     getProfiles,
@@ -40,11 +40,12 @@ export default function Index({
                         rel="stylesheet"
                     ></link>
                 </Head>
+                <h2 className="mx-5 mt-5 md:mb-2 order-first text-center xs:text-left sm:mx-10 text-3xl md:text-4xl font-semibold tracking-tighter leading-tight">
+                    Projets réalisés
+                </h2>
                 <div className="w-full p-5 flex flex-col justify-center">
-                    <Intro profile={mainProfile} />
-                    <Gallery data={imagesServices} />
                     {lastProjects.length > 0 && (
-                        <LastProjects lastProjects={lastProjects} />
+                        <ProjectsCards projects={lastProjects} />
                     )}
 
                     {/* {heroPost && (
